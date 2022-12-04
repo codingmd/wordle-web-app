@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}
+    {{ wordle.name }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h1>{{ wordle.name }}</h1>
+    <p>{{ wordle.description }}</p>
+    <p>{{ wordle.score }}</p>
+    <p>{{ wordle.board|linebreaksbr }}</p>
+{% endblock content %}  

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}
+Homepage - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<h1>Wordles</h1>
+{% for wordle in wordles %}
+<h2><a href="{% url 'wordle_detail' slug=wordle.slug %}">
+    {{ wordle.name }}
+</a></h2>
+<p>{{ wordle.description }}</p>
+{% endfor %}
+{% endblock content %}
